@@ -19,7 +19,7 @@ test_data_name_set = 'test3'
 # Choose seed mode or not #
 ###########################
 test_data_random_seed_mode = True
-test_data_seed = 1
+test_data_seed = 1 # Set the seed here
 
 if test_data_random_seed_mode:
 	np.random.seed(test_data_seed)
