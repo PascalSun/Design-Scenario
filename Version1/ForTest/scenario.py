@@ -3,7 +3,7 @@ import numpy as np
 
 def generate(hosts):
 	# Generate the file
-	t = open('test1.hosts', 'w')
+	t = open('test1.hosts.json', 'w')
 	content ='  "{}" : {{\
 	\n    "location" : {},\
 	\n    "i-state" : "{}",\
@@ -49,7 +49,7 @@ def generatehosts(num,hubnum,rate,hubhome):
 	return hosts
 
 def generatelocation(locations):
-	t = open('test1.locations','w')
+	t = open('test1.locations.json','w')
 	content = ' "{}" :{{\
 	\n   "coordinates": {},\
 	\n   "neighbours": {},\
@@ -117,7 +117,7 @@ def main():
 	# par = [num of hosts, num of hubs, rate of different situation at initation stage, rate of people stay home with no hub]
 	# num of hosts should be line of area * line of area
 
-	par =[90000,10,[0.1,0.3,0.5,0.1],0.2]
+	par =[900,10,[0.1,0.3,0.5,0.1],0.2]
 
 
 	hosts = generatehosts(par[0],par[1],par[2],par[3])
@@ -126,7 +126,7 @@ def main():
 
 	# par = [line of the area, capabilty, immature, v-state]
 
-	parlocation = [300,20,0,[20,0,0,0]]
+	parlocation = [30,20,0,[20,0,0,0]]
 
 	locations = generatelocations(parlocation[0],parlocation[1],parlocation[2],parlocation[3])
 	generatelocation(locations)
