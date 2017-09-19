@@ -13,7 +13,17 @@ import json
 # Specify the test data file name #
 ###################################
 
-test_data_name_set = 'test1'
+test_data_name_set = 'test3'
+
+###########################
+# Choose seed mode or not #
+###########################
+test_data_random_seed_mode = True
+test_data_seed = 1
+
+if test_data_random_seed_mode:
+	np.random.seed(test_data_seed)
+
 
 ########################
 # Parameter for config #
@@ -145,9 +155,11 @@ def generatehosts(hostnum,locationnum,hubnum,rate,hubhome):
 	# A list of hub with different rates
 	hubs = [-1]
 	hubsrate = [hubhome]
+
+
 	for k in range(hubnum):
-		hubs.append(random.randint(0,locationnum))
-		hubsrate.append((1-hubhome)/hubnum)
+		hubs.append(np.random.randint(0,locationnum))  # randome choice the hubs id from the locations
+		hubsrate.append((1-hubhome)/hubnum) # each hub will be picked at the corrsponding rate
 
     # Generate a list of home
 	home = np.random.choice(locationnum,hostnum)
