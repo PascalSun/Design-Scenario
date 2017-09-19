@@ -1,0 +1,8 @@
+{
+    "params-file": "test1.params.json",
+    "hosts-file": "test1.hosts.json",
+    "current-cycle": 0,
+    "locations-file": "test1.locations.json",
+    "datalog-file": "test1.datalog.json",
+    "total-cycles": 1000
+}

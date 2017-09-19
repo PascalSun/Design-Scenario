@@ -32,19 +32,18 @@
   
 
 ## ToDo
-- [ ] Generate for python code
+- [x] Generate for python code
     * Generate param json file
     * Generate configure json file
     * Should be able to take input set
-- [ ] Generate for new format
+- [x] Generate for new format
     * a new config file is added
-
+- [ ] Transfer the csv to json, real data
 
 ## Generate Test Json
-
 * Choose mode:
     * mode 1: random
     * mode 2: with seed
 
-## Proposal
+## Need to improve
 1. generate location grid not square
