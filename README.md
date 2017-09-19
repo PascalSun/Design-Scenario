@@ -9,10 +9,10 @@
     * python3/python2
     * numpy
 
-## ToDo
+## Parameter
 * Parameter for file:
     - location:
-        * line
+        * line*line the grid is a square
         * v-capacity [20]
         * v-immature
         * v-state [20,0,0,0]
@@ -22,7 +22,10 @@
         * number of hubs
         * [S,E,I,R] initialize
         * rate of people without hubs
+    - param
+        * all the parameters should be able to redefined
 
+## ToDo
 * Generate param json file
 * Generate configure json file
 * Should be able to take input set
@@ -33,4 +36,5 @@
     * mode 1: random
     * mode 2: with seed
 
-
+## Proposal
+1. generate location grid not square

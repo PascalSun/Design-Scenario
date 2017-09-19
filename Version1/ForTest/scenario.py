@@ -1,6 +1,21 @@
 import random
 import numpy as np
 
+
+
+
+####################################
+# Setup the 
+
+
+
+
+
+
+###################################
+# Generate Hosts with 2 functions #
+# generatehosts is used to generate the data
+# generate is used to generate the file
 def generate(hosts):
 	# Generate the file
 	t = open('test1.hosts', 'w')
@@ -40,7 +55,6 @@ def generatehosts(hostnum,locationnum,hubnum,rate,hubhome):
 	# A list of hub with different rates
 	hubs = [-1]
 	hubsrate = [hubhome]
-	print(hubsrate)
 	for k in range(hubnum):
 		hubs.append(random.randint(0,locationnum))
 		hubsrate.append((1-hubhome)/hubnum)
@@ -50,7 +64,15 @@ def generatehosts(hostnum,locationnum,hubnum,rate,hubhome):
 	for i in range(hostnum):
 		hosts.append([i,home[i],np.random.choice(elems, p=rate),home[i],np.random.choice(hubs,p=hubsrate)])
 	return hosts
+#end generate host
+#######################################
 
+
+######################################
+# Generate Location with 3 functions #
+# generatelocation is used to generate the file
+# generatelocations is used to generate the data
+# generateneighbour is used to find the neighbours for each cells
 def generatelocation(locations):
 	t = open('test1.locations','w')
 	content = ' "{}" :{{\
@@ -115,12 +137,19 @@ def generateneighbour(x,line):
 		neighbours.append(x-line)
 	return neighbours
 
+#end generate locations
+############################################
+
+
+#########################################
+# Generate param file with one function #
+# def generate_param():
 
 def main():
 	# par = [num of hosts,num of locations, num of hubs, rate of different situation at initation stage, rate of people stay home with no hub]
 	# num of hosts should be line of area * line of area
 
-	par =[200,900,100,[0.1,0.3,0.5,0.1],0.2]
+	par =[190,900,100,[0.1,0.3,0.5,0.1],0.2]
 
 
 	hosts = generatehosts(par[0],par[1],par[2],par[3],par[4])
