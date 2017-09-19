@@ -3,7 +3,7 @@ import numpy as np
 
 def generate(hosts):
 	# Generate the file
-	t = open('test1.hosts.json', 'w')
+	t = open('test1.hosts', 'w')
 	content ='  "{}" : {{\
 	\n    "location" : {},\
 	\n    "i-state" : "{}",\
@@ -30,7 +30,7 @@ def generate(hosts):
 	t.write("} ")
 	t.close()
 
-def generatehosts(num,hubnum,rate,hubhome):
+def generatehosts(hostnum,locationnum,hubnum,rate,hubhome):
 	# Generate the hosts []
 
 	# Choose the initation state of the infectious situation with different rate
@@ -40,16 +40,19 @@ def generatehosts(num,hubnum,rate,hubhome):
 	# A list of hub with different rates
 	hubs = [-1]
 	hubsrate = [hubhome]
+	print(hubsrate)
 	for k in range(hubnum):
-		hubs.append(random.randint(0,num))
+		hubs.append(random.randint(0,locationnum))
 		hubsrate.append((1-hubhome)/hubnum)
 
-	for i in range(num):
-		hosts.append([i,i,np.random.choice(elems, p=rate),i,np.random.choice(hubs,p=hubsrate)])
+    # Generate a list of home
+	home = np.random.choice(locationnum,hostnum)
+	for i in range(hostnum):
+		hosts.append([i,home[i],np.random.choice(elems, p=rate),home[i],np.random.choice(hubs,p=hubsrate)])
 	return hosts
 
 def generatelocation(locations):
-	t = open('test1.locations.json','w')
+	t = open('test1.locations','w')
 	content = ' "{}" :{{\
 	\n   "coordinates": {},\
 	\n   "neighbours": {},\
@@ -114,13 +117,13 @@ def generateneighbour(x,line):
 
 
 def main():
-	# par = [num of hosts, num of hubs, rate of different situation at initation stage, rate of people stay home with no hub]
+	# par = [num of hosts,num of locations, num of hubs, rate of different situation at initation stage, rate of people stay home with no hub]
 	# num of hosts should be line of area * line of area
 
-	par =[900,10,[0.1,0.3,0.5,0.1],0.2]
+	par =[200,900,100,[0.1,0.3,0.5,0.1],0.2]
 
 
-	hosts = generatehosts(par[0],par[1],par[2],par[3])
+	hosts = generatehosts(par[0],par[1],par[2],par[3],par[4])
 	generate(hosts)
 
 
