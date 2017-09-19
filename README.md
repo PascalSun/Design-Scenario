@@ -45,6 +45,7 @@
 - [x] Generate for new format
     * a new config file is added
 - [ ] Transfer the csv to json, real data
+    * only define the location and host file
 
 ## Generate Test Json
 * Choose mode:
