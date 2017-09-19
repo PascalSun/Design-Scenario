@@ -1,13 +1,84 @@
 import random
 import numpy as np
+import json
 
-
-
+# This version can be used in python code
 
 ####################################
-# Setup the 
+# Setup the test data              #
+####################################
+
+##########################
+# Parameter for locations#
+##########################
+grid_line = 30
+v_capacity = 20
+v_immature = 0
+v_state = [v_capacity,0,0,0]
 
 
+#######################
+# Parameter for hosts #
+#######################
+host_number = 200
+location_number = grid_line*grid_line
+hub_number = 100
+# initialize status for hosts with S E I R
+initialize_status = [1,0,0,0] # [0.2,0.3,0.4,0.1]
+host_no_hub_rate = 0.2
+
+#######################
+# Parameter for param #
+#######################
+param ={
+  "duration"                     : 100,
+  "vector-diffusion-probability" : 0.1,
+  "biting-rate"                  : 1.0,
+  "vector-infection-probability" : 0.1,
+  "host-infection-probability"   : 0.9,
+  "vector-e-to-i-rate"           : 0.5,
+  "host-e-to-i-rate"             : 0.5,
+  "host-i-to-r-rate"             : 0.1,
+  "vector-birth-rate"            : 0.5,
+  "vector-maturation-rate"       : 0.1,
+  "vector-death-rate"            : 0.1
+}
+
+###################################
+# Specify the test data file name #
+###################################
+
+test_data_name_set = 'test1'
+
+
+###################################
+#          main function          #
+###################################
+def main():
+	#-----------------------------------#
+	# To generate the param file here   #
+	generate_param()
+
+
+	#-----------------------------------#
+	# To generate the location file here
+	# Generate the input
+	# par = [line of the area, capabilty, immature, v-state]
+	parlocation = [grid_line,v_capacity,v_immature,v_state]
+	# Generate the location data
+	locations = generatelocations(parlocation[0],parlocation[1],parlocation[2],parlocation[3])
+	# Generate the file
+	generatelocation(locations)
+
+	#--------------------------#
+	# To generate host file here
+	#Generate the input par
+	# par = [num of hosts,num of locations, num of hubs, rate of different situation at initation stage, rate of people stay home with no hub]
+	par = [host_number,location_number,hub_number,initialize_status,host_no_hub_rate]
+	# Generate data
+	hosts = generatehosts(par[0],par[1],par[2],par[3],par[4])
+	# Generate file
+	generate(hosts)
 
 
 
@@ -18,7 +89,7 @@ import numpy as np
 # generate is used to generate the file
 def generate(hosts):
 	# Generate the file
-	t = open('test1.hosts', 'w')
+	t = open(test_data_name_set+'.hosts', 'w')
 	content ='  "{}" : {{\
 	\n    "location" : {},\
 	\n    "i-state" : "{}",\
@@ -74,7 +145,7 @@ def generatehosts(hostnum,locationnum,hubnum,rate,hubhome):
 # generatelocations is used to generate the data
 # generateneighbour is used to find the neighbours for each cells
 def generatelocation(locations):
-	t = open('test1.locations','w')
+	t = open(test_data_name_set+'.locations','w')
 	content = ' "{}" :{{\
 	\n   "coordinates": {},\
 	\n   "neighbours": {},\
@@ -143,24 +214,10 @@ def generateneighbour(x,line):
 
 #########################################
 # Generate param file with one function #
-# def generate_param():
-
-def main():
-	# par = [num of hosts,num of locations, num of hubs, rate of different situation at initation stage, rate of people stay home with no hub]
-	# num of hosts should be line of area * line of area
-
-	par =[190,900,100,[0.1,0.3,0.5,0.1],0.2]
-
-
-	hosts = generatehosts(par[0],par[1],par[2],par[3],par[4])
-	generate(hosts)
-
-
-	# par = [line of the area, capabilty, immature, v-state]
-
-	parlocation = [30,20,0,[20,0,0,0]]
-
-	locations = generatelocations(parlocation[0],parlocation[1],parlocation[2],parlocation[3])
-	generatelocation(locations)
+def generate_param():
+	param['hosts-file'] = test_data_name_set+'.hosts'
+	param['locations-file'] = test_data_name_set+'.locations'
+	with open(test_data_name_set+'.params', 'w') as f:
+	  json.dump(param, f, ensure_ascii=False)
 
 main()
