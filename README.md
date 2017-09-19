@@ -6,8 +6,9 @@
 * Transfer csv to JSON file
 
 ## Environment Setup
-    * python3/python2
-    * numpy
+
+* python3/python2
+* numpy
 
 ## Parameter
 * Parameter for python version random test file:
