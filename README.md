@@ -10,7 +10,7 @@
     * numpy
 
 ## Parameter
-* Parameter for file:
+* Parameter for python version random test file:
     - location:
         * line*line the grid is a square
         * v-capacity [20]
@@ -28,6 +28,7 @@
           - some people may do not have hub, just stay home
     - param
         * all the parameters should be able to redefined
+  
 
 ## ToDo
 * Generate param json file

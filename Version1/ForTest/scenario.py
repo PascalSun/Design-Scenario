@@ -8,9 +8,18 @@ import json
 # Setup the test data              #
 ####################################
 
+
+###################################
+# Specify the test data file name #
+###################################
+
+test_data_name_set = 'test1'
+
+
 ##########################
 # Parameter for locations#
 ##########################
+
 grid_line = 30
 v_capacity = 20
 v_immature = 0
@@ -20,6 +29,7 @@ v_state = [v_capacity,0,0,0]
 #######################
 # Parameter for hosts #
 #######################
+
 host_number = 200
 location_number = grid_line*grid_line
 hub_number = 100
@@ -30,6 +40,7 @@ host_no_hub_rate = 0.2
 #######################
 # Parameter for param #
 #######################
+
 param ={
   "duration"                     : 100,
   "vector-diffusion-probability" : 0.1,
@@ -44,11 +55,6 @@ param ={
   "vector-death-rate"            : 0.1
 }
 
-###################################
-# Specify the test data file name #
-###################################
-
-test_data_name_set = 'test1'
 
 
 ###################################
