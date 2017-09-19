@@ -32,9 +32,13 @@
   
 
 ## ToDo
-* Generate param json file
-* Generate configure json file
-* Should be able to take input set
+- [ ] Generate for python code
+    * Generate param json file
+    * Generate configure json file
+    * Should be able to take input set
+- [ ] Generate for new format
+    * a new config file is added
+
 
 ## Generate Test Json
 
