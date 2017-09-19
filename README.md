@@ -29,6 +29,12 @@
           - some people may do not have hub, just stay home
     - param
         * all the parameters should be able to redefined
+    - random seed 
+        * set the seed to generate the same test file
+    - test series name
+        * set the test output file name
+    - note:
+        * all the parameters metioned above can be set within the scenario.py file
   
 
 ## ToDo
