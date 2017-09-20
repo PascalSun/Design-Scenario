@@ -20,7 +20,7 @@ test_data_name_set = 'test1'
 # Parameter for locations#
 ##########################
 
-grid_line = 30
+grid_line = 150
 v_capacity = 20
 v_immature = 0
 v_state = [v_capacity,0,0,0]
@@ -30,9 +30,9 @@ v_state = [v_capacity,0,0,0]
 # Parameter for hosts #
 #######################
 
-host_number = 200
+host_number = 8000
 location_number = grid_line*grid_line
-hub_number = 100
+hub_number = 10000
 # initialize status for hosts with S E I R
 initialize_status = [1,0,0,0] # [0.2,0.3,0.4,0.1]
 host_no_hub_rate = 0.2
