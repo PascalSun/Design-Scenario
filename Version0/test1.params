@@ -1,1 +1,0 @@
-{"host-i-to-r-rate": 0.1, "vector-maturation-rate": 0.1, "vector-e-to-i-rate": 0.5, "host-e-to-i-rate": 0.5, "vector-diffusion-probability": 0.1, "duration": 100, "vector-infection-probability": 0.1, "vector-birth-rate": 0.5, "biting-rate": 1.0, "locations-file": "test1.locations", "host-infection-probability": 0.9, "vector-death-rate": 0.1, "hosts-file": "test1.hosts"}
