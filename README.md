@@ -42,9 +42,9 @@
         * [S,E,I,R] initialize
         * rate of people without hubs
         * note:
-          - number of hub used to generate a list of hubs, then pick up the hub from hub id
-          - one hub can contain 2 or more people
-          - some people may do not have hub, just stay home
+          * number of hub used to generate a list of hubs, then pick up the hub from hub id
+          * one hub can contain 2 or more people
+          * some people may do not have hub, just stay home
     - param
         * all the parameters should be able to redefined
     - random seed 
