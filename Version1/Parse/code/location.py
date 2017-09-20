@@ -123,7 +123,7 @@ def main():
 
 			par = [cellID,[float(longs[colno-1]),float(lats[rowno-1])],generateneighbour(rowno,colno),[],capss,0,[capss,0,0,0]]		
 			loca.append(par)
-			print(rowno,colno)
+			# print(rowno,colno)
 	generatelocation(loca)
 	print('locations done')
 
