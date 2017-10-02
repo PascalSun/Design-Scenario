@@ -38,7 +38,7 @@ test_data_config = {
 # Parameter for locations#
 ##########################
 
-grid_line = 30
+grid_line = 300
 v_capacity = 20
 v_immature = 0
 v_state = [v_capacity,0,0,0]
@@ -48,11 +48,11 @@ v_state = [v_capacity,0,0,0]
 # Parameter for hosts #
 #######################
 
-host_number = 200
+host_number = 2000
 location_number = grid_line*grid_line
-hub_number = 100
+hub_number = 3000
 # initialize status for hosts with S E I R
-initialize_status = [1,0,0,0] # can be like [0.2,0.3,0.4,0.1], which means start with some points that infection already happens
+initialize_status = [0.2,0.3,0.4,0.1] # can be like [0.2,0.3,0.4,0.1], which means start with some points that infection already happens
 host_no_hub_rate = 0.2
 
 #######################

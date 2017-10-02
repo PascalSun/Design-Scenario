@@ -30,11 +30,11 @@ v_state = [v_capacity,0,0,0]
 # Parameter for hosts #
 #######################
 
-host_number = 8000
+host_number = 10000
 location_number = grid_line*grid_line
 hub_number = 10000
 # initialize status for hosts with S E I R
-initialize_status = [1,0,0,0] # [0.2,0.3,0.4,0.1]
+initialize_status = [0.2,0.3,0.4,0.1] # [0.2,0.3,0.4,0.1]
 host_no_hub_rate = 0.2
 
 #######################
