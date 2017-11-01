@@ -40,14 +40,14 @@ def generatelocation(locations):
 def generateneighbour(row,col):
 	neighbours = []
 	if row > 1 and row < 310:
-		neighbours.append(row*226+col)
+		neighbours.append(row*226+col-453)
 	if row > 0 and row < 309:
-		neighbours.append((row+2)*226+col)
+		neighbours.append((row+2)*226+col-453)
 
 	if col>1 and col < 227:
-		neighbours.append((row+1)*226+col-1)
+		neighbours.append((row+1)*226+col-1-453)
 	if col > 0 and col < 226:
-		neighbours.append((row+1)*226+col+1)
+		neighbours.append((row+1)*226+col+1-453)
 	return neighbours
 
 # Get cell info from LocationCellInfo.csv

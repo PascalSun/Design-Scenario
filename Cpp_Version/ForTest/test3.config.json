@@ -1,1 +1,1 @@
-{"total-cycles": 1000, "current-cycle": 0, "datalog-file": "test3.datalog.json", "params-file": "test3.params.json", "locations-file": "test3.locations.json", "hosts-file": "test3.hosts.json"}
+{"seed": {"value": 3333333333, "type": "uint"}, "checkpoint": {"interval": 100, "type": "cycles"}, "params-file": "test3.params.json", "hosts-file": "test3.hosts.json", "current-cycle": 0, "total-cycles": 1000, "locations-file": "test3.locations.json", "datalog-file": "test3.datalog.json"}

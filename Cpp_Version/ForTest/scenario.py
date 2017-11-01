@@ -31,7 +31,18 @@ if test_data_random_seed_mode:
 
 test_data_config = {
   "current-cycle": 0,
-  "total-cycles": 1000
+  "total-cycles": 1000,
+  
+  "checkpoint": {
+	"type": "cycles",
+	"interval":100
+  },
+  
+  "seed": {
+	"type": "uint",
+	"value": 3333333333
+  }  
+
 }
 
 ##########################

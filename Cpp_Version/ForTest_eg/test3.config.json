@@ -4,5 +4,14 @@
   "locations-file": "test3.locations.json",
   "datalog-file": "test3.datalog.json",
   "current-cycle": 0,
-  "total-cycles": 1000
+  "total-cycles": 1000,
+    "checkpoint": {
+	"type": "cycles",
+	"interval":100
+  },
+  
+  "seed": {
+	"type": "uint",
+	"value": 3333333333
+  }
 }

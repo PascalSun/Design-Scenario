@@ -1,4 +1,4 @@
-import random
+
 import numpy as np
 import json
 
@@ -15,7 +15,16 @@ import json
 
 test_data_name_set = 'test1'
 
+###########################
+# Choose seed mode or not #
+###########################
+test_data_random_seed_mode = True
+test_data_seed = 1 # Set the seed here
 
+if test_data_random_seed_mode:
+	np.random.seed(test_data_seed)
+
+	
 ##########################
 # Parameter for locations#
 ##########################
@@ -133,7 +142,7 @@ def generatehosts(hostnum,locationnum,hubnum,rate,hubhome):
 	hubs = [-1]
 	hubsrate = [hubhome]
 	for k in range(hubnum):
-		hubs.append(random.randint(0,locationnum))
+		hubs.append(np.random.randint(0,locationnum))
 		hubsrate.append((1-hubhome)/hubnum)
 
     # Generate a list of home

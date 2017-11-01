@@ -1,0 +1,1 @@
+{"total-cycles": 1000, "checkpoint": {"interval": 100, "type": "cycles"}, "locations-file": "thisistest.locations.json", "seed": {"type": "uint", "value": 3333333333}, "params-file": "thisistest.params.json", "datalog-file": "thisistest.datalog.json", "hosts-file": "thisistest.hosts.json", "current-cycle": 0}

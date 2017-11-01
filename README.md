@@ -15,17 +15,17 @@
     - run with ``python ArbovirusSimulator.py *.params``
     - use to compare with the c++ version outcomes
 - Python_Version: Generate Test Data used for python version
-    - ForTest: Randomly generate data
-        - mode 1: random
-        - mode 2: random with seed
+    - ForTest: Randomly generate data, ``python3 scenario.py``
+        - mode 1: random, set ``test_data_random_seed_mode=false``
+        - mode 2: random with seed, set ``test_data_random_seed_mode=true``
     - Parse: Transfer data from csv to json
         - run: ``python host.py`` and ``python location.py``
 - Cpp_Version: Generate Test Data for c++ version with new format
     - ForTest_eg: Example of new format
-    - ForTest: Randomly generate test data
-        - mode 1: random
-        - mode 2: random with seed
-    - Parse: Transfer data from csv suitable for c++ version
+    - ForTest: Randomly generate test data, ``python3 scenario.py``
+        - mode 1: random, set ``test_data_random_seed_mode=false``
+        - mode 2: random with seed, set ``test_data_random_seed_mode=true``
+    - Parse: Transfer data from csv suitable for c++ version, ``python parse.py``
         - note: to be able to use in python version, we can just copy the location and host file for python code to use
 
 
@@ -69,7 +69,7 @@
 
 1. In the scenario.py or parse.py file, we can edit the config at the top of the file
 2. after edit it with the parameters you want(meanings of parameters seen above), generate it with
-    * ``python scenario.py``
+    * ``python3 scenario.py``
     * ``python parse.py``
     
 

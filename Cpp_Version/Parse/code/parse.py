@@ -24,14 +24,23 @@ test_data_name_set = 'thisistest'
 
 test_data_config = {
   "current-cycle": 0,
-  "total-cycles": 1000
+  "total-cycles": 1000,
+    "checkpoint": {
+	"type": "cycles",
+	"interval":100
+  },
+  
+  "seed": {
+	"type": "uint",
+	"value": 3333333333
+  }  
 }
 
 #######################
 # Paramter for host   #
 #######################
 host_config = {
-	"rate":[1,0,0,0],
+	"rate":[0.9,0.1,0,0],
 	"use_seed":False,
 	'the_seed':1121
 }
@@ -82,6 +91,7 @@ def main():
 
 	#===================================#
 	# To transform host from host file  #
+	print('Generating host file, it may take some time...')
 	generate_host(test_data_name_set,host_config)
 
 

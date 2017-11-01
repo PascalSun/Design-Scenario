@@ -98,9 +98,9 @@ def generate_host(name,host_config):
 		except:
 			try:
 				iwork = work.index(str(i))
-				hub= worklocation[iwork]
+				hub= int(worklocation[iwork])-453
 			except:
 				hub = -1
-		hosts.append([i,hlocation,np.random.choice(elems, p=rate),hlocation,hub])
+		hosts.append([i,int(hlocation)-453,np.random.choice(elems, p=rate),int(hlocation)-453,hub])
 
 	generate(hosts,name)
