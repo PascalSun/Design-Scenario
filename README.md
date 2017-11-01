@@ -11,15 +11,16 @@
 * numpy
 
 ## Directory
-- Version0: Python Version Code
+- Origin: Origian Python Version Code
     - run with ``python ArbovirusSimulator.py *.params``
     - use to compare with the c++ version outcomes
-- Version1: Generate Test Data used in python version
+- Python_Version: Generate Test Data used for python version
     - ForTest: Randomly generate data
         - mode 1: random
         - mode 2: random with seed
     - Parse: Transfer data from csv to json
-- Version3: Generate Test Data for c++ version with new format
+        - run: ``python host.py`` and ``python location.py``
+- Cpp_Version: Generate Test Data for c++ version with new format
     - ForTest_eg: Example of new format
     - ForTest: Randomly generate test data
         - mode 1: random
@@ -72,5 +73,5 @@
     * ``python parse.py``
     
 
-## Need to improve
+## Further Development
 1. generate location grid not square
