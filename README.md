@@ -4,6 +4,7 @@
     - random
     - random with seed
 * Transfer csv to JSON file
+* Can be used for original python version as well as cpp version
 
 ## Environment Setup
 
